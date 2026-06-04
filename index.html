@@ -4,130 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hollow Creek Farm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-STXH0Q4vI7rK7GUpWgF8MFogA7nWVYo2TxYjtBuqYsqBg5+Vv1GzF7rjX7Lw9YXQ" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- ═══════════════════════════════════════════════════════ NAVIGATION -->
-<nav id="nav">
-  <div class="container nav-inner">
-
-    <a href="#" class="nav-logo">Hollow<span>Creek</span> Farm</a>
-
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#seasonal">Seasonal</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#farm-store">Farm Store</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="cart-btn" id="cartBtn" aria-label="View cart">
-        🛒
-        <span class="cart-badge" id="cartCount">0</span>
+<header>
+  <!-- ═══════════════════════════════════════════════════════ NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand nav-logo" href="#">Hollow Creek Farm</a>
+      <!-- JS: Bootstrap collapse controls mobile hamburger menu -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a href="#farm-store" class="btn btn-primary btn-sm">Shop Now</a>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#seasonal">Seasonal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#farm-store">Farm Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-secondary me-3 cart-btn" id="cartBtn" aria-label="View cart">
+            🛒 <span class="cart-badge" id="cartCount">0</span>
+          </button>
+          <a href="#farm-store" class="btn btn-primary btn-sm">Shop Now</a>
+        </div>
+      </div>
     </div>
-
-  </div>
-</nav>
+  </nav>
+</header>
+<main>
 
 <!-- ═══════════════════════════════════════════════════════ HERO -->
 <section id="hero">
-  <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <!-- Image placeholder box (right side — matches wireframe) -->
-  <div class="hero-img-box">Hero Background Image — 1440 × 680</div>
-
-  <div class="hero-content">
-    <span class="hero-tag">Est. 1987 · Hudson Valley, NY</span>
-    <h1>Fresh From Our<br>Fields to Your Table</h1>
-    <p>Seasonal produce, artisan goods, and farm events — grown with care on our 40-acre family farm.</p>
-    <div class="hero-btns">
-      <a href="#farm-store" class="btn btn-primary">Shop Now</a>
-      <a href="#seasonal" class="btn btn-outline">Explore</a>
+  <div class="container">
+    <div class="row align-items-center hero-inner">
+      <div class="col-lg-6 hero-left">
+        <div class="hero-content">
+          <span class="hero-tag">Est. 1987 · Hudson Valley, NY</span>
+          <h1>Fresh From Our<br>Fields to Your Table</h1>
+          <p>Seasonal produce, artisan goods, and farm events — grown with care on our 40-acre family farm.</p>
+          <div class="hero-btns">
+            <a href="#seasonal" class="btn btn-primary">Explore</a>
+            <a href="#farm-store" class="btn btn-outline-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-right">
+        <img src="assets/images/hero.png" alt="Red barn sunrise at Hollow Creek Farm" />
+      </div>
     </div>
   </div>
-
-  <!-- JS: smooth scroll to #seasonal -->
-  <button class="hero-chevron" id="heroChevron" aria-label="Scroll down">&#8964;</button>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ SEASONAL -->
 <section id="seasonal">
   <div class="container">
 
-    <h2 class="section-title reveal">Seasonal Picks</h2>
-    <p class="section-subtitle reveal">What's fresh right now on the farm</p>
-
-    <!-- JS: filterBtns filter product cards by data-season attribute -->
-    <div class="filter-row reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="spring">Spring</button>
-      <button class="filter-btn" data-filter="summer">Summer</button>
-      <button class="filter-btn" data-filter="fall">Fall</button>
-      <button class="filter-btn" data-filter="winter">Winter</button>
+    <div class="row align-items-center section-topbar reveal">
+      <div class="col-md-8">
+        <h2 class="section-title">Seasonal</h2>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <button class="btn btn-primary section-action">Add to Cart</button>
+      </div>
     </div>
+    <p class="section-subtitle reveal">Browse today's fresh picks from Hollow Creek Farm.</p>
 
-    <div class="cards-grid-3">
-
-      <div class="product-card reveal" data-season="summer">
-        <div class="img-placeholder" style="height:220px">
-          <span class="cross"></span>
-          Season Spray — $4.00
-        </div>
-        <div class="product-card-body">
-          <span class="product-tag">Summer</span>
-          <h3>Summer Spray Bundle</h3>
-          <p>XXXXXXXXXXXXX</p>
-          <div class="product-footer">
-            <span class="price">$4.00</span>
-            <!-- JS: addToCart(itemId) — pushes item into cart array, updates #cartCount badge -->
-            <button class="btn btn-primary btn-sm" onclick="addToCart('summer-spray', 'Summer Spray Bundle', 4.00)">Add to Cart</button>
+    <div class="row g-4">
+      <div class="col-sm-6 col-xl-3">
+        <article class="card product-card reveal">
+          <img src="assets/images/eggs.png" class="card-img-top" alt="Dozen fresh eggs from Hollow Creek Farm" />
+          <div class="card-body product-card-body">
+            <span class="product-tag">Produce</span>
+            <h3>Fresh Egg Dozen</h3>
+            <p>A dozen farm-fresh eggs from our pasture-raised hens.</p>
+            <div class="product-footer">
+              <span class="price">$8.00</span>
+              <!-- JS: addToCart(itemId, name, price) updates cart badge and cart state -->
+              <button class="btn btn-primary btn-sm" onclick="addToCart('fresh-eggs', 'Fresh Egg Dozen', 8.00)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      <div class="product-card reveal" data-season="summer">
-        <div class="img-placeholder" style="height:220px">
-          <span class="cross"></span>
-          Season Greens — $6.00
-        </div>
-        <div class="product-card-body">
-          <span class="product-tag">Summer</span>
-          <h3>Season Greens Mix</h3>
-          <p>XXXXXXXXXXXXXX</p>
-          <div class="product-footer">
-            <span class="price">$6.00</span>
-            <button class="btn btn-primary btn-sm" onclick="addToCart('season-greens', 'Season Greens Mix', 6.00)">Add to Cart</button>
+      <div class="col-sm-6 col-xl-3">
+        <article class="card product-card reveal">
+          <img src="assets/images/honey.png" class="card-img-top" alt="Jar of raw honey from Hollow Creek Farm" />
+          <div class="card-body product-card-body">
+            <span class="product-tag">Honey</span>
+            <h3>Raw Honey Jar</h3>
+            <p>Pure wildflower honey harvested from our farm apiary.</p>
+            <div class="product-footer">
+              <span class="price">$14.00</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('raw-honey', 'Raw Honey Jar', 14.00)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      <div class="product-card reveal" data-season="fall">
-        <div class="img-placeholder" style="height:220px">
-          <span class="cross"></span>
-          Luxury Acorns — $8.00
-        </div>
-        <div class="product-card-body">
-          <span class="product-tag">Fall</span>
-          <h3>Luxury Acorn Squash</h3>
-          <p>XXXXXXXXXXXXXX</p>
-          <div class="product-footer">
-            <span class="price">$8.00</span>
-            <button class="btn btn-primary btn-sm" onclick="addToCart('acorn-squash', 'Luxury Acorn Squash', 8.00)">Add to Cart</button>
+      <div class="col-sm-6 col-xl-3">
+        <article class="card product-card reveal">
+          <img src="assets/images/jam.png" class="card-img-top" alt="Jar of strawberry preserves from Hollow Creek Farm" />
+          <div class="card-body product-card-body">
+            <span class="product-tag">Preserves</span>
+            <h3>Strawberry Preserves</h3>
+            <p>Sweet strawberry preserves made from farm-picked berries.</p>
+            <div class="product-footer">
+              <span class="price">$10.00</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('strawberry-jam', 'Strawberry Preserves', 10.00)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
+      <div class="col-sm-6 col-xl-3">
+        <article class="card product-card reveal">
+          <img src="assets/images/produce-basket.png" class="card-img-top" alt="Seasonal produce basket from Hollow Creek Farm" />
+          <div class="card-body product-card-body">
+            <span class="product-tag">Seasonal</span>
+            <h3>Seasonal Produce Basket</h3>
+            <p>A curated basket of the freshest seasonal vegetables and fruits from the farm.</p>
+            <div class="product-footer">
+              <span class="price">$16.00</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('produce-basket', 'Seasonal Produce Basket', 16.00)">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -135,64 +139,50 @@
 <!-- ═══════════════════════════════════════════════════════ EVENTS -->
 <section id="events">
   <div class="container">
-
-    <div class="events-layout">
-
-      <!-- Left column: event list -->
-      <div class="events-left reveal">
-        <h2>Upcoming Events</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-5 reveal">
+        <h2>Events</h2>
         <p class="lead">Join us on the farm for seasonal activities, workshops, and tours.</p>
-
-        <!-- Event card 1 -->
-        <div class="event-card">
-          <div class="event-date-badge">
-            <span class="month">Jun</span>
-            <span class="day">15</span>
-          </div>
-          <div class="event-info">
-            <h4>Farm Tour &amp; Tasting</h4>
-            <p>Short description: guided tour + seasonal samples</p>
-            <!-- JS: openModal(eventId) — opens registration modal overlay with event form -->
-            <button class="btn btn-primary btn-sm" onclick="openModal('farm-tour')">Register</button>
-          </div>
-        </div>
-
-        <!-- Event card 2 -->
-        <div class="event-card">
-          <div class="event-date-badge">
-            <span class="month">Jul</span>
-            <span class="day">10</span>
-          </div>
-          <div class="event-info">
-            <h4>Beehive Workshop</h4>
-            <p>Short description: learn about honey production</p>
-            <button class="btn btn-primary btn-sm" onclick="openModal('beehive-workshop')">Register</button>
-          </div>
-        </div>
-
-        <!-- Event card 3 -->
-        <div class="event-card">
-          <div class="event-date-badge">
-            <span class="month">Aug</span>
-            <span class="day">3</span>
-          </div>
-          <div class="event-info">
-            <h4>Harvest Festival</h4>
-            <p>Short description: family-friendly harvest celebration</p>
-            <button class="btn btn-primary btn-sm" onclick="openModal('harvest-fest')">Register</button>
-          </div>
-        </div>
-
+        <img class="event-hero mb-3" src="assets/images/event.png" alt="Family enjoying an event at Hollow Creek Farm" />
+        <button class="btn btn-primary btn-lg">Register</button>
       </div>
-
-      <!-- Right column: map / calendar placeholder -->
-      <div class="events-right reveal">
-        <div class="map-placeholder img-placeholder">
-          <span class="cross"></span>
-          Events Map or Calendar Widget — Placeholder Box
+      <div class="col-lg-7 reveal">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <article class="card event-row">
+              <div class="card-body d-flex gap-3 align-items-center">
+                <span class="event-date">Jun 15</span>
+                <div>
+                  <h4>Farm Tour & Tasting</h4>
+                  <p>Guided tour with seasonal samples straight from the farm.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6">
+            <article class="card event-row">
+              <div class="card-body d-flex gap-3 align-items-center">
+                <span class="event-date">Jul 10</span>
+                <div>
+                  <h4>Beehive Workshop</h4>
+                  <p>Learn about honey production, bees, and sustainable practices.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6">
+            <article class="card event-row">
+              <div class="card-body d-flex gap-3 align-items-center">
+                <span class="event-date">Aug 03</span>
+                <div>
+                  <h4>Harvest Festival</h4>
+                  <p>Family-friendly celebration with hayrides, pumpkins, and live music.</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -201,85 +191,73 @@
 <section id="farm-store">
   <div class="container">
 
-    <h2 class="section-title reveal">Farm Store</h2>
-    <p class="section-subtitle reveal">Handcrafted goods from our fields and kitchen</p>
-
-    <!-- JS: filterByCategory(category) — shows/hides cards via data-category attribute -->
-    <div class="filter-row reveal">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="produce">Produce</button>
-      <button class="filter-btn" data-category="honey">Honey</button>
-      <button class="filter-btn" data-category="preserves">Preserves</button>
-      <button class="filter-btn" data-category="merch">Merch</button>
+    <div class="row align-items-center section-topbar reveal">
+      <div class="col-md-8">
+        <h2 class="section-title">Farm Store</h2>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <button class="btn btn-primary section-action">Add to Cart</button>
+      </div>
     </div>
+    <p class="section-subtitle reveal">Handcrafted goods from our fields and kitchen.</p>
 
-    <div class="cards-grid-4">
-
-      <div class="store-card reveal" data-category="honey">
-        <div class="img-placeholder store-card-img" style="height:180px">
-          <span class="cross"></span>
-        </div>
-        <div class="store-card-body">
-          <div class="stars">★★★★★</div>
-          <div class="sku">SKU: XXXXXX</div>
-          <h4>Raw Wildflower Honey</h4>
-          <p class="sku">XXXXXXXXXXXXXXX</p>
-          <div class="store-footer">
-            <span class="price">$XXX</span>
-            <!-- JS: addToCart(itemId) — updates cart state, animates cart icon -->
-            <button class="btn btn-primary btn-sm" onclick="addToCart('honey-wild', 'Raw Wildflower Honey', 14)">Add to Cart</button>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <article class="card store-card reveal">
+          <img src="assets/images/honey.png" class="card-img-top" alt="Jar of raw honey" />
+          <div class="card-body store-card-body">
+            <div class="stars">★★★★★</div>
+            <h4>Raw Wildflower Honey</h4>
+            <p class="sku">Rich, golden honey from our farm apiary.</p>
+            <div class="store-footer">
+              <span class="price">$14</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('honey-wild', 'Raw Wildflower Honey', 14)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      <div class="store-card reveal" data-category="preserves">
-        <div class="img-placeholder" style="height:180px">
-          <span class="cross"></span>
-        </div>
-        <div class="store-card-body">
-          <div class="stars">★★★★☆</div>
-          <div class="sku">SKU: XXXXXX</div>
-          <h4>Strawberry Preserve</h4>
-          <p class="sku">XXXXXXXXXXXXXXX</p>
-          <div class="store-footer">
-            <span class="price">$XXX</span>
-            <button class="btn btn-primary btn-sm" onclick="addToCart('strawberry-preserve', 'Strawberry Preserve', 9)">Add to Cart</button>
+      <div class="col-sm-6 col-lg-3">
+        <article class="card store-card reveal">
+          <img src="assets/images/jam.png" class="card-img-top" alt="Jar of strawberry preserves" />
+          <div class="card-body store-card-body">
+            <div class="stars">★★★★☆</div>
+            <h4>Strawberry Preserves</h4>
+            <p class="sku">Sweet preserves made with hand-picked berries.</p>
+            <div class="store-footer">
+              <span class="price">$10</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('strawberry-preserve', 'Strawberry Preserves', 10)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      <div class="store-card reveal" data-category="produce">
-        <div class="img-placeholder" style="height:180px">
-          <span class="cross"></span>
-        </div>
-        <div class="store-card-body">
-          <div class="stars">★★★★★</div>
-          <div class="sku">SKU: XXXXXX</div>
-          <h4>Heirloom Tomato Box</h4>
-          <p class="sku">XXXXXXXXXXXXXXX</p>
-          <div class="store-footer">
-            <span class="price">$XXX</span>
-            <button class="btn btn-primary btn-sm" onclick="addToCart('tomato-box', 'Heirloom Tomato Box', 18)">Add to Cart</button>
+      <div class="col-sm-6 col-lg-3">
+        <article class="card store-card reveal">
+          <img src="assets/images/eggs.png" class="card-img-top" alt="Farm fresh eggs" />
+          <div class="card-body store-card-body">
+            <div class="stars">★★★★★</div>
+            <h4>Fresh Egg Dozen</h4>
+            <p class="sku">A dozen farm fresh eggs from pasture-raised hens.</p>
+            <div class="store-footer">
+              <span class="price">$8</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('fresh-eggs', 'Fresh Egg Dozen', 8)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      <div class="store-card reveal" data-category="merch">
-        <div class="img-placeholder" style="height:180px">
-          <span class="cross"></span>
-        </div>
-        <div class="store-card-body">
-          <div class="stars">★★★★☆</div>
-          <div class="sku">SKU: XXXXXX</div>
-          <h4>Farm Tote Bag</h4>
-          <p class="sku">XXXXXXXXXXXXXXX</p>
-          <div class="store-footer">
-            <span class="price">$XXX</span>
-            <button class="btn btn-primary btn-sm" onclick="addToCart('tote-bag', 'Farm Tote Bag', 22)">Add to Cart</button>
+      <div class="col-sm-6 col-lg-3">
+        <article class="card store-card reveal">
+          <img src="assets/images/cider.png" class="card-img-top" alt="Fresh apple cider" />
+          <div class="card-body store-card-body">
+            <div class="stars">★★★★☆</div>
+            <h4>Apple Cider Jug</h4>
+            <p class="sku">Fresh-pressed apple cider from our orchard harvest.</p>
+            <div class="store-footer">
+              <span class="price">$12</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('apple-cider', 'Apple Cider Jug', 12)">Add to Cart</button>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-
     </div>
   </div>
 </section>
@@ -288,31 +266,18 @@
 <section id="about">
   <div class="container">
 
-    <div class="about-layout">
-
-      <div class="about-img reveal">
-        <div class="img-placeholder">
-          <span class="cross"></span>
-          Farm Photo or Team Photo
-        </div>
+    <div class="row about-layout align-items-center g-5">
+      <div class="col-lg-6 about-img reveal">
+        <img src="assets/images/about.png" alt="Hollow Creek Farm family team photo" />
       </div>
+      <div class="col-lg-6 about-text reveal">
+        <span class="overline">About the Farm</span>
+        <h2>Our Farm,<br>Our Promise</h2>
+        <p>For more than 35 years, the Calloway family has grown fresh produce and farm-crafted goods with care, community, and sustainability at the heart of everything we do.</p>
+        <p>From field to store, we invite visitors to experience seasonal U-Pick harvests, farm dinners, and events set on our sunlit Hudson Valley property.</p>
+        <p>Every product in our store is made from ingredients grown on our land or sourced from trusted local partners we know by name.</p>
 
-      <div class="about-text reveal">
-        <span class="overline">Our Story</span>
-        <h2>H2: Our Farm,<br>Our Promise</h2>
-        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        <!-- JS: expandStory() — toggles hidden paragraph with CSS max-height transition -->
-        <a href="#" class="text-link" id="storyLink" onclick="expandStory(event)">Read Our Full Story →</a>
-
-        <div id="storyExpanded" style="max-height:0; overflow:hidden; transition: max-height 0.5s ease;">
-          <p style="margin-top:16px; font-size:.95rem; color:var(--text-mid); line-height:1.75;">
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXX.
-          </p>
-        </div>
-
-        <div class="about-values">
+        <div class="about-values d-flex flex-wrap gap-4 mt-4">
           <div class="value-item">
             <span class="value-num">40+</span>
             <span class="value-label">Acres</span>
@@ -326,7 +291,13 @@
             <span class="value-label">Varieties</span>
           </div>
         </div>
+      </div>
+    </div>
 
+    <div class="map-block reveal mt-5">
+      <div class="contact-map-box img-placeholder">
+        <span class="cross"></span>
+        Map placeholder
       </div>
     </div>
   </div>
@@ -336,86 +307,91 @@
 <section id="contact">
   <div class="container">
 
-    <h2 class="section-title reveal">Get In Touch</h2>
-    <p class="section-subtitle reveal">We'd love to hear from you</p>
+    <div class="row align-items-start">
+      <div class="col-lg-6 reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you</p>
 
-    <div class="contact-layout">
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <p class="lead">Questions about orders, events, or farm visits? Drop us a note.</p>
 
-      <!-- Left: Contact form -->
-      <div class="contact-form-wrap reveal">
-        <h3>Send a Message</h3>
-        <p class="lead">Questions about orders, events, or farm visits? Drop us a note.</p>
-
-        <!-- JS: validateAndSend(e) — validates fields, shows inline errors, submits via fetch() -->
-        <form id="contactForm" onsubmit="validateAndSend(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" placeholder="Jane" required />
+          <!-- JS: validateAndSend(e) — validates fields, shows inline errors, submits via fetch() -->
+          <form id="contactForm" onsubmit="validateAndSend(event)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control" placeholder="Jane" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control" placeholder="Smith" required />
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" placeholder="Smith" required />
+            <div class="form-group mb-3">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="jane@example.com" required />
             </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="jane@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <select id="subject">
-              <option value="">Select a topic…</option>
-              <option>Farm Visit</option>
-              <option>Order Question</option>
-              <option>Event Registration</option>
-              <option>Wholesale Inquiry</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message here…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
-          <div class="form-message" id="formMsg"></div>
-        </form>
-      </div>
-
-      <!-- Right: Map + contact details -->
-      <div class="map-wrap reveal">
-        <h3>Find Us</h3>
-        <p class="lead">Open Tuesday – Sunday, 8am – 6pm</p>
-
-        <!-- JS: mapEmbed.init() — initializes Google Maps JS API with farm coordinates + custom marker -->
-        <div class="contact-map-box img-placeholder">
-          <span class="cross"></span>
-          Embedded Google Map — Placeholder Box
-        </div>
-
-        <div class="contact-details">
-          <div class="contact-row">
-            <span class="contact-icon">📍</span>
-            <span>123 Hollow Road, Hudson Valley, NY 12534</span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-icon">📞</span>
-            <span>(845) 555-0187</span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-icon">✉️</span>
-            <span>hello@greenhollow.farm</span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-icon">🕐</span>
-            <span>Tue – Sun: 8:00 am – 6:00 pm</span>
-          </div>
+            <div class="form-group mb-3">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-select">
+                <option value="">Select a topic…</option>
+                <option>Farm Visit</option>
+                <option>Order Question</option>
+                <option>Event Registration</option>
+                <option>Wholesale Inquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Write your message here…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            <div class="form-message mt-3" id="formMsg"></div>
+          </form>
         </div>
       </div>
 
+      <div class="col-lg-6 reveal">
+        <div class="map-wrap">
+          <h3>Find Us</h3>
+          <p class="lead">Open Tuesday – Sunday, 8am – 6pm</p>
+
+          <!-- JS: mapEmbed.init() — initializes Google Maps JS API with farm coordinates + custom marker -->
+          <div class="contact-map-box img-placeholder mb-4">
+            <span class="cross"></span>
+            Embedded Google Map — Placeholder Box
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-row">
+              <span class="contact-icon">📍</span>
+              <span>123 Hollow Road, Hudson Valley, NY 12534</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon">📞</span>
+              <span>(845) 555-0187</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon">✉️</span>
+              <span>hello@hollowcreek.farm</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon">🕐</span>
+              <span>Tue – Sun: 8:00 am – 6:00 pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+</main>
 
 <!-- ═══════════════════════════════════════════════════════ FOOTER -->
 <footer>
@@ -423,8 +399,8 @@
     <div class="footer-grid">
 
       <div>
-        <div class="footer-logo">GreenHollow Farm</div>
-        <p class="footer-tagline">Family-farmed since 1987. Organic produce, artisan goods, and seasonal events in the Hudson Valley.</p>
+        <div class="footer-logo">Hollow Creek Farm</div>
+        <p class="footer-tagline">Family-farmed since 1987. Artisan produce, events, and warm farm experiences in the Hudson Valley.</p>
         <div class="footer-social">
           <button class="social-btn" aria-label="Instagram">ig</button>
           <button class="social-btn" aria-label="Facebook">fb</button>
@@ -458,7 +434,7 @@
 
       <div class="footer-col">
         <h5>Newsletter</h5>
-        <p style="font-size:.85rem;margin-bottom:4px;">Seasonal updates, harvest news, and event invites.</p>
+        <p class="footer-copy">Seasonal updates, harvest news, and event invites.</p>
         <!-- JS: subscribeUser(e) — POSTs email to mailing list API, shows confirmation on success -->
         <form class="newsletter-form" onsubmit="subscribeUser(event)">
           <input type="email" placeholder="your@email.com" required />
@@ -469,7 +445,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© 2025 Green Hollow Farm. All rights reserved.</span>
+      <span>© 2025 Hollow Creek Farm. All rights reserved.</span>
       <span>Privacy Policy · Terms of Use</span>
     </div>
   </div>
@@ -480,7 +456,7 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
     <h3 id="modalTitle">Event Registration</h3>
-    <p id="modalDesc" style="color:var(--text-muted);font-size:.9rem;margin-bottom:24px;"></p>
+    <p id="modalDesc" class="modal-description"></p>
     <form onsubmit="submitRegistration(event)">
       <div class="form-group">
         <label>Full Name</label>
@@ -496,7 +472,7 @@
           <option>1</option><option>2</option><option>3</option><option>4+</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary" style="width:100%">Confirm Registration</button>
+      <button type="submit" class="btn btn-primary w-100">Confirm Registration</button>
     </form>
   </div>
 </div>
