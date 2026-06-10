@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,34 +9,6 @@
 </head>
 <body>
 <header>
-  <!-- ═══════════════════════════════════════════════════════ NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand nav-logo" href="#">Hollow Creek Farm</a>
-      <!-- JS: Bootstrap collapse controls mobile hamburger menu -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#seasonal">Seasonal</a></li>
-          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#farm-store">Farm Store</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <div class="d-flex align-items-center">
-          <button class="btn btn-outline-secondary me-3 cart-btn" id="cartBtn" aria-label="View cart">
-            🛒 <span class="cart-badge" id="cartCount">0</span>
-          </button>
-          <a href="#farm-store" class="btn btn-primary btn-sm">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
-<main>
 
 <!-- ═══════════════════════════════════════════════════════ HERO -->
 <section id="hero">
@@ -81,10 +53,12 @@
           <div class="card-body product-card-body">
             <span class="product-tag">Produce</span>
             <h3>Fresh Egg Dozen</h3>
-            <p>A dozen farm-fresh eggs from our pasture-raised hens.</p>
+            <p>Farm-fresh eggs from our pasture-raised heritage hens. Rich, golden yolks with incredible flavor.</p>
+            <div class="product-details" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+              ✓ Pasture-raised · ✓ No antibiotics · ✓ Available year-round
+            </div>
             <div class="product-footer">
               <span class="price">$8.00</span>
-              <!-- JS: addToCart(itemId, name, price) updates cart badge and cart state -->
               <button class="btn btn-primary btn-sm" onclick="addToCart('fresh-eggs', 'Fresh Egg Dozen', 8.00)">Add to Cart</button>
             </div>
           </div>
@@ -96,7 +70,10 @@
           <div class="card-body product-card-body">
             <span class="product-tag">Honey</span>
             <h3>Raw Honey Jar</h3>
-            <p>Pure wildflower honey harvested from our farm apiary.</p>
+            <p>Pure, unfiltered wildflower honey from our own farm apiary. Packed with natural enzymes.</p>
+            <div class="product-details" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+              ✓ Unfiltered · ✓ No additives · ✓ Local bees
+            </div>
             <div class="product-footer">
               <span class="price">$14.00</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('raw-honey', 'Raw Honey Jar', 14.00)">Add to Cart</button>
@@ -110,7 +87,10 @@
           <div class="card-body product-card-body">
             <span class="product-tag">Preserves</span>
             <h3>Strawberry Preserves</h3>
-            <p>Sweet strawberry preserves made from farm-picked berries.</p>
+            <p>Delicious, thick-cut strawberry preserves made from hand-picked berries. Perfect for baking.</p>
+            <div class="product-details" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+              ✓ No pectin · ✓ Small batch · ✓ Organic sugar
+            </div>
             <div class="product-footer">
               <span class="price">$10.00</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('strawberry-jam', 'Strawberry Preserves', 10.00)">Add to Cart</button>
@@ -124,7 +104,10 @@
           <div class="card-body product-card-body">
             <span class="product-tag">Seasonal</span>
             <h3>Seasonal Produce Basket</h3>
-            <p>A curated basket of the freshest seasonal vegetables and fruits from the farm.</p>
+            <p>A carefully curated selection of the freshest seasonal vegetables and fruits, picked at peak ripeness.</p>
+            <div class="product-details" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+              ✓ Changes weekly · ✓ Peak freshness · ✓ 8-10 items
+            </div>
             <div class="product-footer">
               <span class="price">$16.00</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('produce-basket', 'Seasonal Produce Basket', 16.00)">Add to Cart</button>
@@ -209,6 +192,7 @@
             <div class="stars">★★★★★</div>
             <h4>Raw Wildflower Honey</h4>
             <p class="sku">Rich, golden honey from our farm apiary.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Pure & unfiltered · Local bee-raised</p>
             <div class="store-footer">
               <span class="price">$14</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('honey-wild', 'Raw Wildflower Honey', 14)">Add to Cart</button>
@@ -223,6 +207,7 @@
             <div class="stars">★★★★☆</div>
             <h4>Strawberry Preserves</h4>
             <p class="sku">Sweet preserves made with hand-picked berries.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Small batch · No additives</p>
             <div class="store-footer">
               <span class="price">$10</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('strawberry-preserve', 'Strawberry Preserves', 10)">Add to Cart</button>
@@ -237,6 +222,7 @@
             <div class="stars">★★★★★</div>
             <h4>Fresh Egg Dozen</h4>
             <p class="sku">A dozen farm fresh eggs from pasture-raised hens.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Pasture-raised · Free-range · Golden yolks</p>
             <div class="store-footer">
               <span class="price">$8</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('fresh-eggs', 'Fresh Egg Dozen', 8)">Add to Cart</button>
@@ -251,6 +237,7 @@
             <div class="stars">★★★★☆</div>
             <h4>Apple Cider Jug</h4>
             <p class="sku">Fresh-pressed apple cider from our orchard harvest.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Cold-pressed · No sugar added · Seasonal</p>
             <div class="store-footer">
               <span class="price">$12</span>
               <button class="btn btn-primary btn-sm" onclick="addToCart('apple-cider', 'Apple Cider Jug', 12)">Add to Cart</button>
@@ -477,6 +464,9 @@
   </div>
 </div>
 
-
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9uj1LQLN4vNlz2F1UAyb9gBljlNDV+M3qparP3dnyMQKqP2u/Y0L+W7U" crossorigin="anonymous"></script>
+<!-- Custom Script -->
+<script src="script.js"></script>
 </body>
 </html>
