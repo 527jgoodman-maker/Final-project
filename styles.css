@@ -1395,3 +1395,27 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.hero-right img {
+  width: 100%;
+  max-width: 800px; /* was 620px */
+  height: 550px;   /* add fixed height */
+  object-fit: cover;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr; /* gives more space to image */
+  gap: 60px;
+  align-items: center;
+}
+.hero-right img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}2
